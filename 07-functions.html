@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    
+
+    <script>
+         /*Create a function called 'greet' that displays the message 'Hello!'
+         in the console. Call/run this function a few times using: greet();
+         
+         
+         Add a parameter called 'name' to the 'greet'
+         function and display the message 'Hello ${name}!'
+         Call the function a few times with different names: greet('Simon')*/
+
+         function greet(name) {
+            if (!name) {
+                console.log('Hello there!')
+            } else {
+                console.log(`Hello ${name}!`)
+            }
+            
+         }
+       
+         greet('Aisha');
+         greet('Glory');
+         greet('Caramel');
+         greet();
+
+
+         /*Create a function 'convertToFahrenheit(celcius)' that takes a number
+         in degress celcius and returns a number in degrees fahrenheit
+         * Formula: fahrenheit = (celcius * 9/5) + 32
+         * convertToFahrenheit(25) => 77 */
+
+         
+         
+         
+         
+         function convertToFahrenheit(celcius) {
+            return (celcius * 9 / 5) + 32
+            }
+         /*Create a function 'convertToCelcius(fahrenheit)' that takes a number
+         in degress fahrenheit and returns a number in degrees celcius
+         * Formula: Celcius = (fahrenheit - 32) * 5/9
+         * convertToCelcius(86) => 30 */
+        function convertToCelcius(fahrenheit) {
+            return (fahrenheit - 32) * 5 / 9;
+            
+        }
+
+          function convertTemperture(degrees, unit) {
+            if (unit === 'C') {
+               result = convertToFahrenheit(degrees)
+               return `${result}F`
+            } else if (unit === 'F') {
+               result = convertToCelcius(degrees)
+               return `${result}C` 
+            }
+          }
+
+          console.log(convertTemperture(86, 'F'));
+
+          /*Create a function convertLength(length, from, to) takes a number and a
+          unit ('km' or 'miles') and converts the length to another unit
+        ('km' or 'miles'). Note: 1 mile = 1.6 km (approximately)*/
+
+         function convertLength(length, from, to) {
+            if (from === 'miles' && to === 'km') {
+              result = length * 1.6;
+              return `${result} km` ;
+            } else if (from === 'km' && to === 'miles') {
+                result =  length / 1.6;
+                return `${result} miles` ;
+            } else if (from === 'km' && to === 'feet') {
+                result = length * 3281;
+                return `${result} ft` ;
+            } else if (from === 'miles' && to === 'feet') {
+                result = length * 5280;
+                return `${result} ft` ;
+            } 
+         }
+
+         console.log(convertLength(80, 'km', 'feet'))
+         console.log(convertLength(80, 'miles', 'feet'))
+          </script>
+</body>
+</html>

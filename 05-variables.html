@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+     <p >Cart Quantity</p>
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`)"> Show Quantity</button>
+    <button onclick="updateCartQuantity(1)"> Add to Cart</button>
+
+
+    <button onclick="updateCartQuantity(2)"> +2</button>
+
+    <button onclick="updateCartQuantity(3)"> +3</button>
+    <!--5h.  In the Cart Quantity project, add 2 more buttons "+4" and "+5"
+    , which increase the quantity by 4 and 5 when you click them. Try using += -->
+
+
+    <button onclick="updateCartQuantity(4)"> +4</button>
+
+
+     <button onclick="updateCartQuantity(5)"> +5</button>
+     <!--5i.  In the Cart Quantity project, add a button "Remove from cart", which decreases
+     the cart quantity by 1-->
+     
+     <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+     
+     <!--5j.  Add 2 buttons '-2' and '-3', which decrease the quantity by 2 and 3-->
+     <button onclick="updateCartQuantity(-2)"> -2</button>
+
+
+     <button onclick="updateCartQuantity(-3)"> -3</button>
+    
+    <!--Go to the calculator.html file for the challenge exercise-->
+    <button onclick="cartQuantity = 0
+    console.log(`Cart Quantity has been reset`)"> Reset Cart</button>
+    <script>
+       let cartQuantity = 0;
+       
+
+       function updateCartQuantity(value) {
+           cartQuantity += value;
+         
+           if (cartQuantity > 9) {
+        alert('The cart is full')
+       } else if (cartQuantity < 1) {
+        alert('Not enough items in the cart')
+       } 
+       else {
+        console.log(`Cart Quantity: ${cartQuantity}`)
+       }
+    
+       }
+    </script>
+</body>
+</html>
+
